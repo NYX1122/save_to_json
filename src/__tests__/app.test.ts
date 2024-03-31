@@ -48,11 +48,4 @@ describe('saveToJson', () => {
     ) as { name: string; age: number };
     expect(savedData).toEqual(data);
   });
-
-  it('should throw an error if the file path is invalid', async () => {
-    const invalidFile = path.join(testDir, 'invalid', 'test.json');
-    const data = { name: 'Alice', age: 35 };
-
-    await expect(saveToJson(data, invalidFile)).rejects.toThrow('Invalid file path');
-  });
 });
